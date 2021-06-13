@@ -56,7 +56,7 @@ public class Main {
         return result;
     }
 
-    private static int getNumberWith6SixFactor(int input) {
+    private static int getNumberWith6Factor(int input) {
         int[] arr = new int[input];
         for(int i=0; i<arr.length; i++) {
             arr[i] = i+1;
@@ -82,7 +82,7 @@ public class Main {
         factor[0] = 0;
         genPrimeFactor();
 
-        System.out.printf("Total angka yang tidak melebihi n dan dengan tepat memiliki 6 faktor: %d%n", getNumberWith6SixFactor(Integer.parseInt(strN)));
+        System.out.printf("Total angka yang tidak melebihi n dan dengan tepat memiliki 6 faktor: %d%n", getNumberWith6Factor(Integer.parseInt(strN)));
     }
 
 }
