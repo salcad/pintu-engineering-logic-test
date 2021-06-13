@@ -56,18 +56,18 @@ public class Main {
         return result;
     }
 
-    private static int getNumberWith6Factor(int input) {
+    private static int getCountOfNumberWith6Factor(int input) {
         int[] arr = new int[input];
         for(int i=0; i<arr.length; i++) {
             arr[i] = i+1;
         }
-        int numsOf6Factor = 0;
+        int totCountOfNumberWith6Factor = 0;
         for (int i=0; i<arr.length; i++) {
             if (calcNumsOfFactors(arr[i]) == 6) {
-                numsOf6Factor++;
+                totCountOfNumberWith6Factor++;
             }
         }
-        return numsOf6Factor;
+        return totCountOfNumberWith6Factor;
     }
 
     public static void main(String[] args)
@@ -82,7 +82,7 @@ public class Main {
         factor[0] = 0;
         genPrimeFactor();
 
-        System.out.printf("Total angka yang tidak melebihi n dan dengan tepat memiliki 6 faktor: %d%n", getNumberWith6Factor(Integer.parseInt(strN)));
+        System.out.printf("Total angka yang tidak melebihi n dan dengan tepat memiliki 6 faktor: %d%n", getCountOfNumberWith6Factor(Integer.parseInt(strN)));
     }
 
 }
