@@ -23,3 +23,5 @@ Hour 4: $5
 Hour 5: $6
 Hour 6: $2
 
+In this scenario, 
+the maximum profit Jacky can make is: $5, he will buy at 3rd hour and sell at 5th hour.
