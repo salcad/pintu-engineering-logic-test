@@ -57,13 +57,9 @@ public class Main {
     }
 
     private static int getTotCountOfNumberWith6Factor(int input) {
-        int[] arr = new int[input];
-        for(int i=0; i<arr.length; i++) {
-            arr[i] = i+1;
-        }
         int totCountOfNumberWith6Factor = 0;
-        for (int i=0; i<arr.length; i++) {
-            if (calcNumsOfFactors(arr[i]) == 6) {
+        for (int i=0; i<input; i++) {
+            if (calcNumsOfFactors(i+1) == 6) {
                 totCountOfNumberWith6Factor++;
             }
         }
