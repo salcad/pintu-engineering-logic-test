@@ -22,10 +22,10 @@ public class Main {
     public static String firstOccurrenceFromLeftToRight(String input) {
         StringBuilder result = new StringBuilder();
         boolean[] occurrenceArr = new boolean[26];
-        for (char inpChar: input.toCharArray()) {
-            if (!occurrenceArr[inpChar - 'a']) {
-                result.append(inpChar);
-                occurrenceArr[inpChar - 'a'] = true;
+        for (char inputChar: input.toCharArray()) {
+            if (!occurrenceArr[inputChar - 'a']) {
+                result.append(inputChar);
+                occurrenceArr[inputChar - 'a'] = true;
             }
         }
         return result.toString();
@@ -34,26 +34,26 @@ public class Main {
     public static String smallestLexicographicalOrder(String input) {
         int[] alphabetArr = new int[26];
         boolean[] occurrenceArr = new boolean[26];
-        char[] inpCharArr = new char[input.length()];
+        char[] resultCharArr = new char[input.length()];
         int idx = 0;
 
-        for (char inpChar: input.toCharArray()) {
-            alphabetArr[inpChar - 'a']++;
+        for (char inputChar: input.toCharArray()) {
+            alphabetArr[inputChar - 'a']++;
         }
 
-        for (char inpChar: input.toCharArray()) {
-            alphabetArr[inpChar - 'a']--;
+        for (char inputChar: input.toCharArray()) {
+            alphabetArr[inputChar - 'a']--;
 
-            if (!occurrenceArr[inpChar - 'a']) {
+            if (!occurrenceArr[inputChar - 'a']) {
                 while ((idx > 0) &&
-                        (inpChar < inpCharArr[idx - 1]) &&
-                        (alphabetArr[inpCharArr[idx - 1] - 'a'] > 0)) {
-                    occurrenceArr[inpCharArr[--idx] - 'a'] = false;
+                        (inputChar < resultCharArr[idx - 1]) &&
+                        (alphabetArr[resultCharArr[idx - 1] - 'a'] > 0)) {
+                    occurrenceArr[resultCharArr[--idx] - 'a'] = false;
                 }
-                inpCharArr[idx++] = inpChar;
-                occurrenceArr[inpChar - 'a'] = true;
+                resultCharArr[idx++] = inputChar;
+                occurrenceArr[inputChar - 'a'] = true;
             }
         }
-        return new String(inpCharArr, 0, idx);
+        return new String(resultCharArr, 0, idx);
     }
 }
